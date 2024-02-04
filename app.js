@@ -1,11 +1,17 @@
+// Desc: Main entry point for the application
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const app = express();
+// middlewares
+const notFoundMiddleware = require('./app/middleware/not-found');
+const handleErrorMiddleware = require('./app/middleware/handler-error');
 
+// routes
 const categoriesRouter = require('./app/api/v1/categories/router');
+
+const app = express();
 
 const v1 = '/api/v1/cms';
 
@@ -22,5 +28,9 @@ app.get('/', (req, res) => {
 });
 
 app.use(v1, categoriesRouter);
+
+// middlewares
+app.use(notFoundMiddleware);
+app.use(handleErrorMiddleware);
 
 module.exports = app;
