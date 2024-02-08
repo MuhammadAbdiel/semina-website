@@ -63,6 +63,13 @@ const updateTalents = async (req) => {
   // cari image dengan field image
   await checkingImage(image);
 
+  const checkTalent = await Talents.findOne({
+    _id: id,
+  });
+
+  // jika id checkTalent false / null maka akan menampilkan error `Tidak ada pembicara dengan id` yang dikirim client
+  if (!checkTalent) throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
+
   // cari talents dengan field name dan id selain dari yang dikirim dari params
   const check = await Talents.findOne({
     name,
@@ -73,9 +80,6 @@ const updateTalents = async (req) => {
   if (check) throw new BadRequestError('pembicara sudah terdaftar');
 
   const result = await Talents.findOneAndUpdate({ _id: id }, { name, image, role }, { new: true, runValidators: true });
-
-  // jika id result false / null maka akan menampilkan error `Tidak ada pembicara dengan id` yang dikirim client
-  if (!result) throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
 
   return result;
 };

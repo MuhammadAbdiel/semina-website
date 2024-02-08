@@ -38,6 +38,13 @@ const updateCategories = async (req) => {
   const { id } = req.params;
   const { name } = req.body;
 
+  const checkCategory = await Categories.findOne({
+    _id: id,
+  });
+
+  // jika id checkCategory false / null maka akan menampilkan error `Tidak ada Kategori dengan id` yang dikirim client
+  if (!checkCategory) throw new NotFoundError(`Tidak ada Kategori dengan id :  ${id}`);
+
   // cari categories dengan field name dan id selain dari yang dikirim dari params
   const check = await Categories.findOne({
     name,
@@ -60,9 +67,6 @@ const updateCategories = async (req) => {
     },
   );
 
-  // jika id result false / null maka akan menampilkan error `Tidak ada Kategori dengan id` yang dikirim client
-  if (!result) throw new NotFoundError(`Tidak ada Kategori dengan id :  ${id}`);
-
   return result;
 };
 
@@ -80,10 +84,19 @@ const deleteCategories = async (req) => {
   return result;
 };
 
+const checkingCategories = async (id) => {
+  const result = await Categories.findOne({ _id: id });
+
+  if (!result) throw new NotFoundError(`Tidak ada Kategori dengan id :  ${id}`);
+
+  return result;
+};
+
 module.exports = {
   getAllCategories,
   createCategories,
   getOneCategories,
   updateCategories,
   deleteCategories,
+  checkingCategories,
 };
