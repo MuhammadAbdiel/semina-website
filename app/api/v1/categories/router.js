@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express();
-const { index, find, create, update, destroy } = require('./controller');
+const { create, index, find, update, destroy } = require('./controller');
+const { authenticateUser, authorizeRoles } = require('../../../middleware/auth');
 
-router.get('/categories', index);
-router.get('/categories/:id', find);
-router.post('/categories', create);
-router.put('/categories/:id', update);
-router.delete('/categories/:id', destroy);
+router.get('/categories', authenticateUser, authorizeRoles('organizer'), index);
+router.get('/categories/:id', authenticateUser, authorizeRoles('organizer'), find);
+router.put('/categories/:id', authenticateUser, authorizeRoles('organizer'), update);
+router.delete('/categories/:id', authenticateUser, authorizeRoles('organizer'), destroy);
+router.post('/categories', authenticateUser, authorizeRoles('organizer'), create);
 
 module.exports = router;
