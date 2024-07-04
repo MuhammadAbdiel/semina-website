@@ -26,6 +26,9 @@
         "no-underscore-dangle": 0,
         "no-useless-catch": 0,
         "arrow-body-style": 0,
-        "prefer-destructuring": 0
+        "prefer-destructuring": 0,
+        "one-var": 0,
+        "prefer-template": 0,
+        "no-param-reassign": 0
     }
 }

@@ -1,0 +1,1301 @@
+{
+	"info": {
+		"_postman_id": "bde9ea23-0d63-479a-beb5-df0c0f18ef8c",
+		"name": "semina-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14790339",
+		"_collection_link": "https://interstellar-space-625992.postman.co/workspace/interstellar-space-625992-Works~43265756-0310-4776-8a97-58d803cee111/collection/14790339-bde9ea23-0d63-479a-beb5-df0c0f18ef8c?action=share&source=collection_link&creator=14790339"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/categories",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Design\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/categories",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/categories/65c777d8ff4434c4ee2dc975",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"categories",
+								"65c777d8ff4434c4ee2dc975"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Programming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/categories/65c777d8ff4434c4ee2dc975",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"categories",
+								"65c777d8ff4434c4ee2dc975"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/categories/65c778b5ff4434c4ee2dc97e",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"categories",
+								"65c778b5ff4434c4ee2dc97e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Get All Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/images",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Image",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "postman-cloud:///1eec4d88-e138-4cd0-b37b-8d8733cb0669",
+									"disabled": true
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "postman-cloud:///1eec4d98-32ac-4670-a648-647b8bcaa362"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/images",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Talents",
+			"item": [
+				{
+					"name": "Get All Talents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/talents?keyword=",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"talents"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Talent",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ronngo Lawe\",\r\n    \"role\": \"Mangan\",\r\n    \"image\": \"65c207dda82e6bd60af40b1a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/talents",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"talents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Talent",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tutik Huma\",\r\n    \"role\": \"Mbambong\",\r\n    \"image\": \"65c207dda82e6bd60af40b1a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/talents/65c77eb89c3c5c905be14f2e",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"talents",
+								"65c77eb89c3c5c905be14f2e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Talent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/talents/65c77eb89c3c5c905be14f2e",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"talents",
+								"65c77eb89c3c5c905be14f2e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Talent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/talents/65c77f4b9c3c5c905be14f42",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"talents",
+								"65c77f4b9c3c5c905be14f42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get All Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "blockchain",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "65bf934ea0e95af3f745b934",
+									"disabled": true
+								},
+								{
+									"key": "talent",
+									"value": "65c23694b6831d15f79cbcc9",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"value": "65c207dda82e6bd60af40b1a",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Draft",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER_2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Web3 Development\",\r\n    \"date\": \"2024/02/28 00:00:00\",\r\n    \"about\": \"about\",\r\n    \"venueName\": \"Malang\",\r\n    \"tagline\": \"Ngoding\",\r\n    \"keyPoint\": [\"web3\", \"bloackchain\"],\r\n    \"statusEvent\": \"Published\",\r\n    \"tickets\": [{\r\n        \"type\": \"PO\",\r\n        \"price\": 20000,\r\n        \"stock\": 350,\r\n        \"statusTicketCategories\": true\r\n    }],\r\n    \"category\": \"62cfe5bd90e64e9e644d3fbf\",\r\n    \"talent\": \"62cfe726d8940572a095e58f\",\r\n    \"image\": \"62cfea14e8fed983d5c3a4e7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Software Development\",\r\n    \"date\": \"2024/02/28 00:00:00\",\r\n    \"about\": \"about\",\r\n    \"venueName\": \"Surabaya\",\r\n    \"tagline\": \"Ngoding\",\r\n    \"keyPoint\": [\"web3\", \"bloackchain\"],\r\n    \"statusEvent\": \"Published\",\r\n    \"tickets\": [{\r\n        \"type\": \"PO\",\r\n        \"price\": 20000,\r\n        \"stock\": 350,\r\n        \"statusTicketCategories\": true\r\n    }],\r\n    \"category\": \"65c777d8ff4434c4ee2dc975\",\r\n    \"talent\": \"65c77eb89c3c5c905be14f2e\",\r\n    \"image\": \"65c207dda82e6bd60af40b1a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events/65c780949c3c5c905be14f55",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events",
+								"65c780949c3c5c905be14f55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status Event",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statusEvent\": \"Published\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events/62cfeacaa7c00d1978e1530f/status",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events",
+								"62cfeacaa7c00d1978e1530f",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events/62cfeacaa7c00d1978e1530f",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events",
+								"62cfeacaa7c00d1978e1530f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/events/65c780949c3c5c905be14f55",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"events",
+								"65c780949c3c5c905be14f55"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organizers",
+			"item": [
+				{
+					"name": "Create Organizer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_OWNER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizer\": \"Organizer 2\",\r\n    \"name\": \"Organizer 2\",\r\n    \"email\": \"organizer2@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"organizer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/organizers",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"organizers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin 1\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/users",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_OWNER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/users",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CMS Auth",
+			"item": [
+				{
+					"name": "Sign In",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"organizer1@gmail.com\",\r\n    \"password\": \"rahasia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/auth/signin",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/orders?page=1",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-07-13",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2022-07-14",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Web",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Muhammad Abdiel\",\r\n    \"lastName\": \"Firjatullah\",\r\n    \"password\": \"rahasiadong\",\r\n    \"email\": \"abdielfirdie@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/auth/signup",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"rahasiadong\",\r\n    \"email\": \"abdielfirdie@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/auth/signin",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"2124\",\r\n    \"email\": \"abdielfirdie@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/active",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/events",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Event",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/events/62cfeacaa7c00d1978e1530f",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"events",
+								"62cfeacaa7c00d1978e1530f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders By Participant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_PARTICIPANT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/orders",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_PARTICIPANT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event\": \"62cfeacaa7c00d1978e1530f\",\r\n    \"payment\": \"6686ab6d9219f6caffa6f1da\",\r\n    \"tickets\": [\r\n        {\r\n            \"ticketCategories\": {\r\n                \"type\": \"Presale 1 Ticket\",\r\n                \"price\": 7300\r\n            },\r\n            \"sumTicket\": 3\r\n        }\r\n    ],\r\n    \"personalDetail\": {\r\n        \"email\": \"email@gmail.com\",\r\n        \"firstName\": \"first\",\r\n        \"lastName\": \"last\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/checkout",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get All Payments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/payments",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/payments/6686ac5d9219f6caffa6f1e0",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"payments",
+								"6686ac5d9219f6caffa6f1e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"wallet\",\r\n    \"image\": \"6686ab3df3f089bd1064ac44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/payments",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"wallet\",\r\n    \"image\": \"6686ab3df3f089bd1064ac44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_DEV}}/cms/payments/6686ac5d9219f6caffa6f1e0",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"payments",
+								"6686ac5d9219f6caffa6f1e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/payments/6686ac5d9219f6caffa6f1e0",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"payments",
+								"6686ac5d9219f6caffa6f1e0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_DEV",
+			"value": "http://localhost:9000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "CMS_TOKEN_ORGANIZER",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3JnYW5pemVyIDEiLCJ1c2VySWQiOiI2MmNmZTM1ZThhZDExZTdhNWUyNDBmMjgiLCJlbWFpbCI6Im9yZ2FuaXplcjFAZ21haWwuY29tIiwicm9sZSI6Im9yZ2FuaXplciIsIm9yZ2FuaXplciI6IjYyY2ZlMzVlOGFkMTFlN2E1ZTI0MGYyNiIsImlhdCI6MTcyMDA5ODU2NCwiZXhwIjoxNzIwMTg0OTY0fQ.2cS_KHjd-CalRV06N70_E1onYfDxXmKVRDdVrodRhjg",
+			"type": "string"
+		},
+		{
+			"key": "CMS_TOKEN_ADMIN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW4gMSIsInVzZXJJZCI6IjYyY2ZlMzk1OWQ2OWQzOGNjYWUzOWE4NiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwib3JnYW5pemVyIjoiNjJjZmUzNWU4YWQxMWU3YTVlMjQwZjI2IiwiaWF0IjoxNzIwMDk4NTM3LCJleHAiOjE3MjAxODQ5Mzd9.w2sf-TY5sK5I4FWJaNIFh2SQA9FV1F-Hm_eF_fEn7t0",
+			"type": "string"
+		},
+		{
+			"key": "CMS_TOKEN_OWNER",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3duZXIgMSIsInVzZXJJZCI6IjYyY2ZlMzcyOGFkMTFlN2E1ZTI0MGYyYyIsImVtYWlsIjoib3duZXJAZ21haWwuY29tIiwicm9sZSI6Im93bmVyIiwib3JnYW5pemVyIjoiNjJjZmUzNzI4YWQxMWU3YTVlMjQwZjJhIiwiaWF0IjoxNzIwMDk4NDgxLCJleHAiOjE3MjAxODQ4ODF9.wZ6Bfcmw_8gEg-k8p2rktnRAMpQWCofcOuGbNVfLhDY",
+			"type": "string"
+		},
+		{
+			"key": "CMS_TOKEN_ORGANIZER_2",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3JnYW5pemVyIDIiLCJ1c2VySWQiOiI2Njg2NDhhNDg2ZmFmOTJkNjAzOGQxMmQiLCJlbWFpbCI6Im9yZ2FuaXplcjJAZ21haWwuY29tIiwicm9sZSI6Im9yZ2FuaXplciIsIm9yZ2FuaXplciI6IjY2ODY0OGE0ODZmYWY5MmQ2MDM4ZDEyYiIsImlhdCI6MTcyMDA5ODUxNCwiZXhwIjoxNzIwMTg0OTE0fQ.Xa6e8SagmCYMlvEeZUeAgbfHkfTJ1-nIgq34BilQq1o",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN_PARTICIPANT",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0TmFtZSI6IkZpcmphdHVsbGFoIiwicGFydGljaXBhbnRJZCI6IjY2ODY5MThlNzlhZWFhZWZjOWM2OTM2NiIsImZpcnN0TmFtZSI6Ik11aGFtbWFkIEFiZGllbCIsImVtYWlsIjoiYWJkaWVsZmlyZGllQGdtYWlsLmNvbSIsImlhdCI6MTcyMDA5OTMwMywiZXhwIjoxNzIwMTg1NzAzfQ.D6hQUvm9B90xmcJXZyD1FsQqZS-1kkQoAeSX-oSoWa4",
+			"type": "string"
+		}
+	]
+}

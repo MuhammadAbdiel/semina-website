@@ -15,10 +15,13 @@ const talentsRouter = require('./app/api/v1/talents/router');
 const eventsRouter = require('./app/api/v1/events/router');
 const organizersRouter = require('./app/api/v1/organizers/router');
 const authRouter = require('./app/api/v1/auth/router');
+const orderRouter = require('./app/api/v1/orders/router');
+const participantsRouter = require('./app/api/v1/participants/router');
+const paymentsRouter = require('./app/api/v1/payments/router');
 
 const app = express();
 
-const v1 = '/api/v1/cms';
+const v1 = '/api/v1';
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -32,12 +35,15 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use(v1, categoriesRouter);
-app.use(v1, imagesRouter);
-app.use(v1, talentsRouter);
-app.use(v1, eventsRouter);
-app.use(v1, organizersRouter);
-app.use(v1, authRouter);
+app.use(`${v1}/cms`, categoriesRouter);
+app.use(`${v1}/cms`, imagesRouter);
+app.use(`${v1}/cms`, talentsRouter);
+app.use(`${v1}/cms`, eventsRouter);
+app.use(`${v1}/cms`, organizersRouter);
+app.use(`${v1}/cms`, authRouter);
+app.use(`${v1}/cms`, paymentsRouter);
+app.use(`${v1}/cms`, orderRouter);
+app.use(`${v1}`, participantsRouter);
 
 // middlewares
 app.use(notFoundMiddleware);

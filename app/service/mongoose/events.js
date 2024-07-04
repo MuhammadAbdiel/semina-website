@@ -54,7 +54,7 @@ const createEvents = async (req) => {
   await checkingTalents(talent);
 
   // cari Events dengan field name
-  const check = await Events.findOne({ title });
+  const check = await Events.findOne({ title, organizer: req.user.organizer });
 
   // apa bila check true / data Events sudah ada maka kita tampilkan error bad request dengan message judul acara sudah terdaftar
   if (check) throw new BadRequestError('judul acara sudah terdaftar');

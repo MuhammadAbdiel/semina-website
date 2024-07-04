@@ -1,9 +1,9 @@
 const { StatusCodes } = require('http-status-codes');
-const { getAllTalents, getOneTalents, updateTalents, createTalents, deleteTalents } = require('../../../service/mongoose/talents');
+const { getAllPayments, createPayments, getOnePayments, updatePayments, deletePayments } = require('../../../service/mongoose/payments');
 
 const create = async (req, res, next) => {
   try {
-    const result = await createTalents(req);
+    const result = await createPayments(req);
 
     res.status(StatusCodes.CREATED).json({
       data: result,
@@ -15,7 +15,7 @@ const create = async (req, res, next) => {
 
 const index = async (req, res, next) => {
   try {
-    const result = await getAllTalents(req);
+    const result = await getAllPayments(req);
 
     res.status(StatusCodes.OK).json({
       data: result,
@@ -27,7 +27,7 @@ const index = async (req, res, next) => {
 
 const find = async (req, res, next) => {
   try {
-    const result = await getOneTalents(req);
+    const result = await getOnePayments(req);
 
     res.status(StatusCodes.OK).json({
       data: result,
@@ -39,7 +39,7 @@ const find = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   try {
-    const result = await updateTalents(req);
+    const result = await updatePayments(req);
 
     res.status(StatusCodes.OK).json({
       data: result,
@@ -51,8 +51,7 @@ const update = async (req, res, next) => {
 
 const destroy = async (req, res, next) => {
   try {
-    const result = await deleteTalents(req);
-
+    const result = await deletePayments(req);
     res.status(StatusCodes.OK).json({
       data: result,
     });
