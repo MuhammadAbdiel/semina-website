@@ -28,7 +28,7 @@ const createTalents = async (req) => {
   const { name, role, image } = req.body;
 
   // cari image dengan field image
-  await checkingImage(image);
+  const talentImage = await checkingImage(image);
 
   // cari talents dengan field name
   const check = await Talents.findOne({ name, organizer: req.user.organizer });
@@ -43,7 +43,10 @@ const createTalents = async (req) => {
     organizer: req.user.organizer,
   });
 
-  return result;
+  return {
+    avatar: talentImage.name,
+    ...result._doc,
+  };
 };
 
 const getOneTalents = async (req) => {
@@ -69,7 +72,7 @@ const updateTalents = async (req) => {
   const { name, image, role } = req.body;
 
   // cari image dengan field image
-  await checkingImage(image);
+  const talentImage = await checkingImage(image);
 
   // cari talents dengan field name dan id selain dari yang dikirim dari params
   const check = await Talents.findOne({
@@ -90,7 +93,10 @@ const updateTalents = async (req) => {
   // jika id result false / null maka akan menampilkan error `Tidak ada pembicara dengan id` yang dikirim client
   if (!result) throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
 
-  return result;
+  return {
+    avatar: talentImage.name,
+    ...result._doc,
+  };
 };
 
 const deleteTalents = async (req) => {

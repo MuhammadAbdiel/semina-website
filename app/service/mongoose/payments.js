@@ -18,7 +18,7 @@ const getAllPayments = async (req) => {
 const createPayments = async (req) => {
   const { type, image } = req.body;
 
-  await checkingImage(image);
+  const paymentImage = await checkingImage(image);
 
   const check = await Payments.findOne({ type, organizer: req.user.organizer });
 
@@ -30,7 +30,10 @@ const createPayments = async (req) => {
     organizer: req.user.organizer,
   });
 
-  return result;
+  return {
+    avatar: paymentImage.name,
+    ...result._doc,
+  };
 };
 
 const getOnePayments = async (req) => {
@@ -55,7 +58,7 @@ const updatePayments = async (req) => {
   const { id } = req.params;
   const { type, image } = req.body;
 
-  await checkingImage(image);
+  const paymentImage = await checkingImage(image);
 
   const check = await Payments.findOne({
     type,
@@ -73,7 +76,10 @@ const updatePayments = async (req) => {
 
   if (!result) throw new NotFoundError(`Tidak ada tipe pembayaran dengan id :  ${id}`);
 
-  return result;
+  return {
+    avatar: paymentImage.name,
+    ...result._doc,
+  };
 };
 
 const deletePayments = async (req) => {
