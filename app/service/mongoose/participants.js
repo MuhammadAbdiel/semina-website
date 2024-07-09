@@ -89,14 +89,17 @@ const signinParticipant = async (req) => {
 
   const token = createJWT({ payload: createTokenParticipant(result) });
 
-  return token;
+  return {
+    user: result,
+    token,
+  };
 };
 
 const getAllEvents = async (req) => {
   const result = await Events.find({ statusEvent: 'Published' })
     .populate('category')
     .populate('image')
-    .select('_id title date tickets venueName');
+    .select('_id title date tickets venueName about');
 
   return result;
 };

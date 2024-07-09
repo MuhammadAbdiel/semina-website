@@ -1,6 +1,7 @@
 const Users = require('../../api/v1/users/model');
 const { BadRequestError, UnauthorizedError } = require('../../error');
-const { createJWT, createUserToken } = require('../../util');
+const { createJWT, createUserToken, createRefreshToken } = require('../../util');
+const { createUserRefreshToken } = require('./refreshToken');
 
 const signin = async (req) => {
   const { email, password } = req.body;
@@ -20,7 +21,13 @@ const signin = async (req) => {
 
   const token = createJWT({ payload: createUserToken(result) });
 
-  return { token, role: result.role };
+  const refreshToken = createRefreshToken({ payload: createUserToken(result) });
+  await createUserRefreshToken({
+    refreshToken,
+    user: result._id,
+  });
+
+  return { token, refreshToken, role: result.role, email: result.email };
 };
 
 module.exports = {

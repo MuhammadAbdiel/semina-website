@@ -38,7 +38,10 @@ const createOrganizer = async (req) => {
 
     delete users[0]._doc.password;
 
-    return users;
+    return {
+      organizerName: organizer,
+      ...users[0]._doc,
+    };
   } catch (err) {
     await session.abortTransaction();
 
@@ -69,8 +72,17 @@ const createUsers = async (req, res) => {
   return result;
 };
 
-const getAllUsers = async () => {
-  const result = await Users.find();
+const getAllUsers = async (req) => {
+  let condition = {};
+
+  if (req.user.role === 'organizer') {
+    condition = { organizer: req.user.organizer };
+  }
+
+  const result = await Users.find(condition).populate({
+    path: 'organizer',
+    select: '_id organizer',
+  });
 
   return result;
 };
