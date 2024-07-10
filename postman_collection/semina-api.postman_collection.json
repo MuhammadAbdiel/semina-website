@@ -161,14 +161,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL_DEV}}/cms/categories/65c778b5ff4434c4ee2dc97e",
+							"raw": "{{URL_DEV}}/cms/categories/66895e23f1c1166729fedc60",
 							"host": [
 								"{{URL_DEV}}"
 							],
 							"path": [
 								"cms",
 								"categories",
-								"65c778b5ff4434c4ee2dc97e"
+								"66895e23f1c1166729fedc60"
 							]
 						}
 					},
@@ -293,7 +293,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Ronngo Lawe\",\r\n    \"role\": \"Mangan\",\r\n    \"image\": \"65c207dda82e6bd60af40b1a\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Ronngo Lawe\",\r\n    \"role\": \"Mangan\",\r\n    \"image\": \"668a885493a7948308908b2a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -678,7 +678,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"organizer\": \"Organizer 2\",\r\n    \"name\": \"Organizer 2\",\r\n    \"email\": \"organizer2@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"organizer\"\r\n}",
+							"raw": "{\r\n    \"organizer\": \"Organizer 8\",\r\n    \"name\": \"Organizer 8\",\r\n    \"email\": \"organizer8@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"organizer\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -718,7 +718,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Admin 1\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Admin 2\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"password\": \"rahasiadong\",\r\n    \"confirmPassword\": \"rahasiadong\",\r\n    \"role\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -750,7 +750,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{CMS_TOKEN_OWNER}}",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
 									"type": "string"
 								}
 							]
@@ -1023,6 +1023,34 @@
 					"response": []
 				},
 				{
+					"name": "Get All Payments By Organizer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN_PARTICIPANT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/payments/62cfe35e8ad11e7a5e240f26",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"payments",
+								"62cfe35e8ad11e7a5e240f26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Checkout",
 					"request": {
 						"auth": {
@@ -1107,14 +1135,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL_DEV}}/cms/payments/6686ac5d9219f6caffa6f1e0",
+							"raw": "{{URL_DEV}}/cms/payments/6686ab6d9219f6caffa6f1da",
 							"host": [
 								"{{URL_DEV}}"
 							],
 							"path": [
 								"cms",
 								"payments",
-								"6686ac5d9219f6caffa6f1e0"
+								"6686ab6d9219f6caffa6f1da"
 							]
 						}
 					},
@@ -1227,6 +1255,41 @@
 			]
 		},
 		{
+			"name": "Refresh Token",
+			"item": [
+				{
+					"name": "Get Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{CMS_TOKEN_ORGANIZER}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_DEV}}/cms/refresh-token/{{REFRESH_TOKEN}}/organizer1@gmail.com",
+							"host": [
+								"{{URL_DEV}}"
+							],
+							"path": [
+								"cms",
+								"refresh-token",
+								"{{REFRESH_TOKEN}}",
+								"organizer1@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "New Request",
 			"request": {
 				"method": "GET",
@@ -1274,17 +1337,17 @@
 		},
 		{
 			"key": "CMS_TOKEN_ORGANIZER",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3JnYW5pemVyIDEiLCJ1c2VySWQiOiI2MmNmZTM1ZThhZDExZTdhNWUyNDBmMjgiLCJlbWFpbCI6Im9yZ2FuaXplcjFAZ21haWwuY29tIiwicm9sZSI6Im9yZ2FuaXplciIsIm9yZ2FuaXplciI6IjYyY2ZlMzVlOGFkMTFlN2E1ZTI0MGYyNiIsImlhdCI6MTcyMDA5ODU2NCwiZXhwIjoxNzIwMTg0OTY0fQ.2cS_KHjd-CalRV06N70_E1onYfDxXmKVRDdVrodRhjg",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3JnYW5pemVyIDEiLCJ1c2VySWQiOiI2MmNmZTM1ZThhZDExZTdhNWUyNDBmMjgiLCJlbWFpbCI6Im9yZ2FuaXplcjFAZ21haWwuY29tIiwicm9sZSI6Im9yZ2FuaXplciIsIm9yZ2FuaXplciI6IjYyY2ZlMzVlOGFkMTFlN2E1ZTI0MGYyNiIsImlhdCI6MTcyMDU5NTUzMiwiZXhwIjoxNzIwNTk3MzMyfQ.mpgPFt-N0ko2LsfLo2IwsrBw16p3ZEUKfiBeBhSes0c",
 			"type": "string"
 		},
 		{
 			"key": "CMS_TOKEN_ADMIN",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW4gMSIsInVzZXJJZCI6IjYyY2ZlMzk1OWQ2OWQzOGNjYWUzOWE4NiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwib3JnYW5pemVyIjoiNjJjZmUzNWU4YWQxMWU3YTVlMjQwZjI2IiwiaWF0IjoxNzIwMDk4NTM3LCJleHAiOjE3MjAxODQ5Mzd9.w2sf-TY5sK5I4FWJaNIFh2SQA9FV1F-Hm_eF_fEn7t0",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWRtaW4gMSIsInVzZXJJZCI6IjYyY2ZlMzk1OWQ2OWQzOGNjYWUzOWE4NiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwib3JnYW5pemVyIjoiNjJjZmUzNWU4YWQxMWU3YTVlMjQwZjI2IiwiaWF0IjoxNzIwNTI2MDE1LCJleHAiOjE3MjA2MTI0MTV9.a0Dyz2K9DC4ugfsE9jydwjLzGtnowH4WL9bh4m5wlOs",
 			"type": "string"
 		},
 		{
 			"key": "CMS_TOKEN_OWNER",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3duZXIgMSIsInVzZXJJZCI6IjYyY2ZlMzcyOGFkMTFlN2E1ZTI0MGYyYyIsImVtYWlsIjoib3duZXJAZ21haWwuY29tIiwicm9sZSI6Im93bmVyIiwib3JnYW5pemVyIjoiNjJjZmUzNzI4YWQxMWU3YTVlMjQwZjJhIiwiaWF0IjoxNzIwMDk4NDgxLCJleHAiOjE3MjAxODQ4ODF9.wZ6Bfcmw_8gEg-k8p2rktnRAMpQWCofcOuGbNVfLhDY",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3duZXIgMSIsInVzZXJJZCI6IjYyY2ZlMzcyOGFkMTFlN2E1ZTI0MGYyYyIsImVtYWlsIjoib3duZXJAZ21haWwuY29tIiwicm9sZSI6Im93bmVyIiwib3JnYW5pemVyIjoiNjJjZmUzNzI4YWQxMWU3YTVlMjQwZjJhIiwiaWF0IjoxNzIwNTE1ODk3LCJleHAiOjE3MjA2MDIyOTd9.NDaN2F5wmM5tipLj8LeJV8s6HWbHi9UdBzggngDVx_s",
 			"type": "string"
 		},
 		{
@@ -1294,7 +1357,12 @@
 		},
 		{
 			"key": "TOKEN_PARTICIPANT",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0TmFtZSI6IkZpcmphdHVsbGFoIiwicGFydGljaXBhbnRJZCI6IjY2ODY5MThlNzlhZWFhZWZjOWM2OTM2NiIsImZpcnN0TmFtZSI6Ik11aGFtbWFkIEFiZGllbCIsImVtYWlsIjoiYWJkaWVsZmlyZGllQGdtYWlsLmNvbSIsImlhdCI6MTcyMDA5OTMwMywiZXhwIjoxNzIwMTg1NzAzfQ.D6hQUvm9B90xmcJXZyD1FsQqZS-1kkQoAeSX-oSoWa4",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0TmFtZSI6IkZpcmphdHVsbGFoIiwicGFydGljaXBhbnRJZCI6IjY2ODY5MThlNzlhZWFhZWZjOWM2OTM2NiIsImZpcnN0TmFtZSI6Ik11aGFtbWFkIEFiZGllbCIsImVtYWlsIjoiYWJkaWVsZmlyZGllQGdtYWlsLmNvbSIsImlhdCI6MTcyMDU5NjIwOCwiZXhwIjoxNzIwNTk4MDA4fQ._mctRpT8T7QViNcB2lrt7mkCq7yaquyz99icxt78PLE",
+			"type": "string"
+		},
+		{
+			"key": "REFRESH_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjhkMzYzZDg2OTIzZmFhMWVhZWM3MjciLCJpYXQiOjE3MjA1MzA1OTcsImV4cCI6MTcyMDYxNjk5N30.6jU-mMehi9CGCLMivrHR5iRr3DrV4z5OIQO4DRL7CRY",
 			"type": "string"
 		}
 	]
