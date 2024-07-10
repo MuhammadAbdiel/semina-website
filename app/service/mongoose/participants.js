@@ -209,7 +209,7 @@ const checkoutOrder = async (req) => {
 const getAllPaymentByOrganizer = async (req) => {
   const { organizer } = req.params;
 
-  const result = await Payments.find({ organizer: organizer });
+  const result = await Payments.find({ organizer: organizer }).populate('image').select('_id type status image');
 
   return result;
 };

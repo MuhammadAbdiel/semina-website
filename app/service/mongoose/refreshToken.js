@@ -24,13 +24,16 @@ const getUserRefreshToken = async (req) => {
   const userCheck = await Users.findOne({ email: payload.email });
 
   const token = createJWT({ payload: createUserToken(userCheck) });
-  const jwtRefreshToken = createRefreshToken({ payload: createUserToken(result) });
-  await createUserRefreshToken({
-    jwtRefreshToken,
-    user: result._id,
-  });
+  // const jwtRefreshToken = createRefreshToken({ payload: createUserToken(result) });
+  // await createUserRefreshToken({
+  //   jwtRefreshToken,
+  //   user: result._id,
+  // });
 
-  return { token, refreshToken: jwtRefreshToken };
+  return {
+    token,
+    //  refreshToken: jwtRefreshToken
+  };
 };
 
 module.exports = { createUserRefreshToken, getUserRefreshToken };
